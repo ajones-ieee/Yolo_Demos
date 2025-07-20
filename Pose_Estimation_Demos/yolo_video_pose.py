@@ -19,7 +19,6 @@ yolo_models = {'yolo8n-pose':'/home/rpi5/Desktop/Yolo_Models/pose/yolov8n-pose.p
                'yolo8m-pose':'/home/rpi5/Desktop/Yolo_Models/pose/yolov8m-pose.pt',
                'yolo8n-pose_ncnn':'/home/rpi5/Desktop/Yolo_Models/pose/NCNN_640/yolov8n-pose_ncnn_model',
                'yolo8s-pose_ncnn':'/home/rpi5/Desktop/Yolo_Models/pose/NCNN_640/yolov8s-pose_ncnn_model',
-               'yolo8m-pose_ncnn':'/home/rpi5/Desktop/Yolo_Models/pose/NCNN_640/yolov8m-pose_ncnn_model',
                'yolo11n-pose':'/home/rpi5/Desktop/Yolo_Models/pose/yolo11n-pose.pt',
                'yolo11s-pose':'/home/rpi5/Desktop/Yolo_Models/pose/yolo11s-pose.pt',
                'yolo11m-pose':'/home/rpi5/Desktop/Yolo_Models/pose/yolo11m-pose.pt',

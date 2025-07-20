@@ -14,13 +14,7 @@ parser.add_argument('--model', help='The YOLO model to use when processing the v
 parser.add_argument('--video', help='The short name of the video file to analyze.', default='hailo_hd')
 args = parser.parse_args()
 
-yolo_models = {'yolo5n':'/home/rpi5/Desktop/Yolo_Models/detect/yolov5nu.pt',
-               'yolo5s':'/home/rpi5/Desktop/Yolo_Models/detect/yolov5su.pt',
-               'yolo5m':'/home/rpi5/Desktop/Yolo_Models/detect/yolov5mu.pt',
-               'yolo5n_ncnn':'/home/rpi5/Desktop/Yolo_Models/detect/NCNN_640/yolov5nu_ncnn_model',
-               'yolo5s_ncnn':'/home/rpi5/Desktop/Yolo_Models/detect/NCNN_640/yolov5su_ncnn_model',
-               'yolo5m_ncnn':'/home/rpi5/Desktop/Yolo_Models/detect/NCNN_640/yolov5mu_ncnn_model',
-               'yolo8n':'/home/rpi5/Desktop/Yolo_Models/detect/yolov8n.pt',
+yolo_models = {'yolo8n':'/home/rpi5/Desktop/Yolo_Models/detect/yolov8n.pt',
                'yolo8s':'/home/rpi5/Desktop/Yolo_Models/detect/yolov8s.pt',
                'yolo8m':'/home/rpi5/Desktop/Yolo_Models/detect/yolov8m.pt',
                'yolo8n_ncnn':'/home/rpi5/Desktop/Yolo_Models/detect/NCNN_640/yolov8n_ncnn_model',

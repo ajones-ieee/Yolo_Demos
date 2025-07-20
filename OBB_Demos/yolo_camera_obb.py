@@ -5,27 +5,20 @@ from ultralytics import YOLO
 import argparse
 
 parser = argparse.ArgumentParser(description='Runs the Yolo OBB operation on a video stream from a camera.')
-parser.add_argument('--model', help='The YOLO model to use when processing the video stream.', default='yolo8n-obb')
+parser.add_argument('--model', help='The YOLO model to use when processing the video stream.', default='yolo8n-obb_ncnn')
 args = parser.parse_args()
 
-yolo_models = {'yolo5n-obb':'/home/rpi5/Desktop/Yolo_Models/obb/yolov5nu-obb.pt',
-               'yolo5s-obb':'/home/rpi5/Desktop/Yolo_Models/obb/yolov5su-obb.pt',
-               'yolo5m-obb':'/home/rpi5/Desktop/Yolo_Models/obb/yolov5mu-obb.pt',
-               'yolo5n-obb_ncnn':'/home/rpi5/Desktop/Yolo_Models/obb/NCNN_640/yolov5nu-obb_ncnn_model',
-               'yolo5s-obb_ncnn':'/home/rpi5/Desktop/Yolo_Models/obb/NCNN_640/yolov5su-obb_ncnn_model',
-               'yolo5m-obb_ncnn':'/home/rpi5/Desktop/Yolo_Models/obb/NCNN_640/yolov5mu-obb_ncnn_model',
-               'yolo8n-obb':'/home/rpi5/Desktop/Yolo_Models/obb/yolov8n-obb.pt',
+yolo_models = {'yolo8n-obb':'/home/rpi5/Desktop/Yolo_Models/obb/yolov8n-obb.pt',
                'yolo8s-obb':'/home/rpi5/Desktop/Yolo_Models/obb/yolov8s-obb.pt',
                'yolo8m-obb':'/home/rpi5/Desktop/Yolo_Models/obb/yolov8m-obb.pt',
-               'yolo8n-obb_ncnn':'/home/rpi5/Desktop/Yolo_Models/obb/NCNN_640/yolov8n-obb_ncnn_model',
-               'yolo8s-obb_ncnn':'/home/rpi5/Desktop/Yolo_Models/obb/NCNN_640/yolov8s-obb_ncnn_model',
-               'yolo8m-obb_ncnn':'/home/rpi5/Desktop/Yolo_Models/obb/NCNN_640/yolov8m-obb_ncnn_model',
+               'yolo8n-obb_ncnn':'/home/rpi5/Desktop/Yolo_Models/obb/NCNN_1024/yolov8n-obb_ncnn_model',
+               'yolo8s-obb_ncnn':'/home/rpi5/Desktop/Yolo_Models/obb/NCNN_1024/yolov8s-obb_ncnn_model',
                'yolo11n-obb':'/home/rpi5/Desktop/Yolo_Models/obb/yolo11n-obb.pt',
                'yolo11s-obb':'/home/rpi5/Desktop/Yolo_Models/obb/yolo11s-obb.pt',
                'yolo11m-obb':'/home/rpi5/Desktop/Yolo_Models/obb/yolo11m-obb.pt',
-               'yolo11n-obb_ncnn':'/home/rpi5/Desktop/Yolo_Models/obb/NCNN_640/yolo11n-obb_ncnn_model',
-               'yolo11s-obb_ncnn':'/home/rpi5/Desktop/Yolo_Models/obb/NCNN_640/yolo11s-obb_ncnn_model',
-               'yolo11m-obb_ncnn':'/home/rpi5/Desktop/Yolo_Models/obb/NCNN_640/yolo11m-obb_ncnn_model'
+               'yolo11n-obb_ncnn':'/home/rpi5/Desktop/Yolo_Models/obb/NCNN_1024/yolo11n-obb_ncnn_model',
+               'yolo11s-obb_ncnn':'/home/rpi5/Desktop/Yolo_Models/obb/NCNN_1024/yolo11s-obb_ncnn_model',
+               'yolo11m-obb_ncnn':'/home/rpi5/Desktop/Yolo_Models/obb/NCNN_1024/yolo11m-obb_ncnn_model'
                }
 
 try:
@@ -100,7 +93,7 @@ while True:
         frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
     
     # Run YOLO model on the captured frame and store the results
-    results = model(frame)
+    results = model(frame, imgsz=1024)
     
     # Output the visual detection data, we will draw this on our camera preview window
     annotated_frame = results[0].plot()

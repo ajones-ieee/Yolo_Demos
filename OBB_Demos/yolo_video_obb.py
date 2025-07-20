@@ -11,7 +11,7 @@ import argparse
 
 parser = argparse.ArgumentParser(description='Runs the Yolo OBB operation on a video stream from an mp4 file.')
 parser.add_argument('--model', help='The YOLO model to use when processing the video stream.', default='yolo8n-obb_ncnn')
-parser.add_argument('--video', help='The short name of the video file to analyze.', default='roundabout2_hd')
+parser.add_argument('--video', help='The short name of the video file to analyze.', default='roundabout_sd')
 args = parser.parse_args()
 
 yolo_models = {'yolo8n-obb':'/home/rpi5/Desktop/Yolo_Models/obb/yolov8n-obb.pt',
@@ -19,8 +19,7 @@ yolo_models = {'yolo8n-obb':'/home/rpi5/Desktop/Yolo_Models/obb/yolov8n-obb.pt',
                'yolo8m-obb':'/home/rpi5/Desktop/Yolo_Models/obb/yolov8m-obb.pt',
                'yolo8n-obb_ncnn':'/home/rpi5/Desktop/Yolo_Models/obb/NCNN_1024/yolov8n-obb_ncnn_model',
                'yolo8s-obb_ncnn':'/home/rpi5/Desktop/Yolo_Models/obb/NCNN_1024/yolov8s-obb_ncnn_model',
-               'yolo8m-obb_ncnn':'/home/rpi5/Desktop/Yolo_Models/obb/NCNN_1024/yolov8m-obb_ncnn_model',
-               'yolo11n-obb':'/home/rpi5/Desktop/Yolo_Models/obb/yolo11n-obb.pt',
+                'yolo11n-obb':'/home/rpi5/Desktop/Yolo_Models/obb/yolo11n-obb.pt',
                'yolo11s-obb':'/home/rpi5/Desktop/Yolo_Models/obb/yolo11s-obb.pt',
                'yolo11m-obb':'/home/rpi5/Desktop/Yolo_Models/obb/yolo11m-obb.pt',
                'yolo11n-obb_ncnn':'/home/rpi5/Desktop/Yolo_Models/obb/NCNN_1024/yolo11n-obb_ncnn_model',
@@ -41,12 +40,7 @@ print ('Using model ' + yolo_model)
 videos = {'traffic1_sd':'/home/rpi5/Desktop/Yolo_Demos/OBB_videos/7005467-sd_960_540_30fps.mp4',
           'traffic1_hd':'/home/rpi5/Desktop/Yolo_Demos/OBB_videos/7005467-hd_1280_720_30fps.mp4',
           'traffic1_full_hd':'/home/rpi5/Desktop/Yolo_Demos/OBB_videos/7005467-hd_1920_1080_30fps.mp4',
-          'roundabout1_sd':'/home/rpi5/Desktop/Yolo_Demos/OBB_videos/4422128-sd_960_540_30fps.mp4',
-          'roundabout1_hd':'/home/rpi5/Desktop/Yolo_Demos/OBB_videos/4422128-hd_1280_720_30fps.mp4',
-          'roundabout1_full_hd':'/home/rpi5/Desktop/Yolo_Demos/OBB_videos/4422128-hd_1920_1080_30fps.mp4',
-          'roundabout2_sd':'/home/rpi5/Desktop/Yolo_Demos/OBB_videos/8918404-sd_960_540_30fps.mp4',
-          'roundabout2_hd':'/home/rpi5/Desktop/Yolo_Demos/OBB_videos/8918404-hd_1280_720_30fps.mp4',
-          'roundabout2_full_hd':'/home/rpi5/Desktop/Yolo_Demos/OBB_videos/8918404-hd_1920_1080_30fps.mp4',
+          'roundabout_sd':'/home/rpi5/Desktop/Yolo_Demos/OBB_videos/8918404-sd_960_540_30fps.mp4',
           'harbor1_sd':'/home/rpi5/Desktop/Yolo_Demos/OBB_videos/9301986-sd_960_540_30fps.mp4',
           'harbor1_hd':'/home/rpi5/Desktop/Yolo_Demos/OBB_videos/9301986-hd_1280_720_30fps.mp4',
           'harbor1_full_hd':'/home/rpi5/Desktop/Yolo_Demos/OBB_videos/9301986-hd_1920_1080_30fps.mp4'
